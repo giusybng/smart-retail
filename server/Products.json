@@ -1,0 +1,182 @@
+[
+    {
+        "Id": 1,
+        "Name": "Farina 00",
+        "Category": "Farinacei",
+        "BeaconId": 1
+    },
+    {
+        "Id": 2,
+        "Name": "Farina di ceci",
+        "Category": "Farinacei",
+        "BeaconId": 1
+    },
+    {
+        "Id": 3,
+        "Name": "Farina di grano duro",
+        "Category": "Farinacei",
+        "BeaconId": 1
+    },
+    {
+        "Id": 4,
+        "Name": "Farina di mais",
+        "Category": "Farinacei",
+        "BeaconId": 1
+    },
+    {
+        "Id": 5,
+        "Name": "Farina di riso",
+        "Category": "Farinacei",
+        "BeaconId": 1
+    },
+    {
+        "Id": 6,
+        "Name": "Farina integrale",
+        "Category": "Farinacei",
+        "BeaconId": 1
+    },
+    {
+        "Id": 7,
+        "Name": "Vino bianco",
+        "Category": "Alcolici",
+        "BeaconId": 1
+    },
+    {
+        "Id": 8,
+        "Name": "Vino rosso",
+        "Category": "Alcolici",
+        "BeaconId": 1
+    },
+    {
+        "Id": 9,
+        "Name": "Champagne",
+        "Category": "Alcolici",
+        "BeaconId": 1
+    },
+    {
+        "Id": 10,
+        "Name": "Grappa",
+        "Category": "Alcolici",
+        "BeaconId": 1
+    },
+    {
+        "Id": 11,
+        "Name": "Cherry",
+        "Category": "Alcolici",
+        "BeaconId": 1
+    },
+    {
+        "Id": 12,
+        "Name": "Cognac",
+        "Category": "Alcolici",
+        "BeaconId": 1
+    },
+    {
+        "Id": 13,
+        "Name": "Agnello",
+        "Category": "Carne",
+        "BeaconId": 2
+    },
+    {
+        "Id": 14,
+        "Name": "Vitello",
+        "Category": "Carne",
+        "BeaconId": 2
+    },
+    {
+        "Id": 15,
+        "Name": "Pollo",
+        "Category": "Carne",
+        "BeaconId": 2
+    },
+    {
+        "Id": 16,
+        "Name": "Manzo",
+        "Category": "Carne",
+        "BeaconId": 2
+    },
+    {
+        "Id": 17,
+        "Name": "Cinghiale",
+        "Category": "Carne",
+        "BeaconId": 2
+    },
+    {
+        "Id": 18,
+        "Name": "Faraona",
+        "Category": "Carne",
+        "BeaconId": 2
+    },
+    {
+        "Id": 19,
+        "Name": "Aceto",
+        "Category": "Condimenti",
+        "BeaconId": 2
+    },
+    {
+        "Id": 20,
+        "Name": "Olio",
+        "Category": "Condimenti",
+        "BeaconId": 2
+    },
+    {
+        "Id": 21,
+        "Name": "Passata di pomodoro",
+        "Category": "Condimenti",
+        "BeaconId": 2
+    },
+    {
+        "Id": 22,
+        "Name": "Maionese",
+        "Category": "Condimenti",
+        "BeaconId": 2
+    },
+    {
+        "Id": 23,
+        "Name": "Salsa di soia",
+        "Category": "Condimenti",
+        "BeaconId": 2
+    },
+    {
+        "Id": 24,
+        "Name": "Ketchup",
+        "Category": "Condimenti",
+        "BeaconId": 2
+    },
+    {
+        "Id": 25,
+        "Name": "Biscotti",
+        "Category": "Dolci",
+        "BeaconId": 2
+    },
+    {
+        "Id": 26,
+        "Name": "Cioccolato",
+        "Category": "Dolci",
+        "BeaconId": 2
+    },
+    {
+        "Id": 27,
+        "Name": "Merendine",
+        "Category": "Dolci",
+        "BeaconId": 2
+    },
+    {
+        "Id": 28,
+        "Name": "Miele",
+        "Category": "Dolci",
+        "BeaconId": 2
+    },
+    {
+        "Id": 29,
+        "Name": "Confettura",
+        "Category": "Dolci",
+        "BeaconId": 2
+    },
+    {
+        "Id": 30,
+        "Name": "Zucchero",
+        "Category": "Dolci",
+        "BeaconId": 2
+    }
+]
