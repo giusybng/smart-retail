@@ -45,9 +45,13 @@ import org.altbeacon.beacon.BeaconManager;
 import org.altbeacon.beacon.BeaconParser;
 import org.altbeacon.beacon.RangeNotifier;
 import org.altbeacon.beacon.Region;
+import org.json.JSONArray;
+
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
+
+import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity implements BeaconConsumer {
     private BluetoothAdapter bluetoothState = BluetoothAdapter.getDefaultAdapter();
@@ -241,6 +245,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
                 public void onClick(View v) {
                     if(!showBeacon) return;
                     showBeacon = false;
+
                     Intent beaconResultsIntent = new Intent(MainActivity.this, BeaconResultsActivity.class);
                     beaconResultsIntent.putExtra("BeaconHash", beacon.getHashCode());
                     beaconResultsIntent.putExtra("BeaconName", beacon.getBeaconName());

@@ -16,7 +16,7 @@
 
 
         <LinearLayout
-            android:id="@+id/dynamic_artwork"
+            android:id="@+id/dynamic_product"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="1dp"

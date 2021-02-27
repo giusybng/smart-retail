@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.URLUtil;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,7 +22,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class BeaconResultsActivity extends AppCompatActivity {
 
-    private static String url = "http://127.0.0.1:4000/"; //edit url
+    private static String url = "http://192.168.1.3:4000"; //edit url
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +37,7 @@ public class BeaconResultsActivity extends AppCompatActivity {
 
         final View progressBar2 = findViewById(R.id.progressBar2);
         String beaconHash = getIntent().getStringExtra("BeaconHash");
-        new AsyncHttpClient().get(url+beaconHash, new JsonHttpResponseHandler() {
+        new AsyncHttpClient().get(url, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray responseBody) {
                 progressBar2.setVisibility(View.GONE);
@@ -56,32 +54,23 @@ public class BeaconResultsActivity extends AppCompatActivity {
 
     /** Recupera le informazioni dal server **/
     private void showResults(JSONArray results) {
-        /*Toast.makeText(BeaconResultsActivity.this, results.length() + " results", Toast.LENGTH_LONG).show();
+        Toast.makeText(BeaconResultsActivity.this, results.length() + " results", Toast.LENGTH_LONG).show();
         if(results.length() <= 0) return;
 
-        LinearLayout dynamicContent = findViewById(R.id.dynamic_artwork);
+        LinearLayout dynamicContent = findViewById(R.id.dynamic_product);
         dynamicContent.removeAllViews();
 
         for (int i = 0; i < results.length(); i++) {
             try {
-                JSONObject artwork = results.getJSONObject(i);
-                View newArtworkView = getLayoutInflater().inflate(R.layout.item_artwork, dynamicContent, false);
-                ((TextView)newArtworkView.findViewById(R.id.title_artwork)).setText(artwork.getString("Title"));
+                JSONObject product = results.getJSONObject(i);
+                View newProductView = getLayoutInflater().inflate(R.layout.item_product, dynamicContent, false);
+                ((TextView)newProductView.findViewById(R.id.product_name)).setText(product.getString("Name"));
 
-                JSONArray artist = artwork.getJSONArray("Artist");
-                String a = "";
-                for (int j = 0; j < artist.length(); j++) a += artist.getString(j) + ((j == artist.length()-1) ? "" : ", ");
-                ((TextView)newArtworkView.findViewById(R.id.artist_artwork)).setText(a);
-
-                if(URLUtil.isValidUrl(artwork.getString("ThumbnailURL"))) Picasso.get().load(artwork.getString("ThumbnailURL")).fit()
-                        .centerCrop().error(R.mipmap.no_image).into((ImageView) newArtworkView.findViewById(R.id.imageView));
-
-                ((TextView)newArtworkView.findViewById(R.id.data_artwork)).setText(artwork.getString("Date"));
-                dynamicContent.addView(newArtworkView);
+                dynamicContent.addView(newProductView);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        }*/
+        }
     }
 
     @Override
