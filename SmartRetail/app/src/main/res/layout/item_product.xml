@@ -41,10 +41,25 @@
                 android:textAppearance="?attr/textAppearanceHeadline5"
                 android:textColor="@android:color/white"
                 android:textSize="26sp"
-                app:layout_constraintEnd_toStartOf="@+id/beacon_distance"
+                app:layout_constraintEnd_toStartOf="@+id/product_category"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Beacon Type" />
+                tools:text="Product Name" />
+
+            <TextView
+                android:id="@+id/product_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="20dp"
+                android:paddingBottom="8dp"
+                android:textAppearance="?attr/textAppearanceSubtitle1"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/product_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Product Category" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

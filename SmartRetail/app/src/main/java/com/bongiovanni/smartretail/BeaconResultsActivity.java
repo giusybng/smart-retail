@@ -65,6 +65,7 @@ public class BeaconResultsActivity extends AppCompatActivity {
                 JSONObject product = results.getJSONObject(i);
                 View newProductView = getLayoutInflater().inflate(R.layout.item_product, dynamicContent, false);
                 ((TextView)newProductView.findViewById(R.id.product_name)).setText(product.getString("Name"));
+                ((TextView)newProductView.findViewById(R.id.product_category)).setText(product.getString("Category"));
 
                 dynamicContent.addView(newProductView);
             } catch (JSONException e) {
