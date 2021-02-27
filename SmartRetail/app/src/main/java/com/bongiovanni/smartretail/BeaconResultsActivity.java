@@ -22,7 +22,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class BeaconResultsActivity extends AppCompatActivity {
 
-    private static String url = "http://192.168.1.3:4000"; //edit url
+    private static String url = "http://192.168.1.3:4000";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class BeaconResultsActivity extends AppCompatActivity {
         });
     }
 
-    /** Recupera le informazioni dal server **/
+    /** Retrieving products from the server **/
     private void showResults(JSONArray results) {
         Toast.makeText(BeaconResultsActivity.this, results.length() + " results", Toast.LENGTH_LONG).show();
         if(results.length() <= 0) return;
