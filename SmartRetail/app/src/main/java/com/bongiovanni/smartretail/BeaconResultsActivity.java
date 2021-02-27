@@ -22,7 +22,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class BeaconResultsActivity extends AppCompatActivity {
 
-    private static String url = "http://192.168.1.3:4000";
+    private static String url = "http://192.168.1.3:4000/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class BeaconResultsActivity extends AppCompatActivity {
 
         final View progressBar2 = findViewById(R.id.progressBar2);
         String beaconHash = getIntent().getStringExtra("BeaconHash");
-        new AsyncHttpClient().get(url, new JsonHttpResponseHandler() {
+        new AsyncHttpClient().get(url+beaconHash, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray responseBody) {
                 progressBar2.setVisibility(View.GONE);
