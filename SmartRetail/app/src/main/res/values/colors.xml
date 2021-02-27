@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorPrimary">#4285F4</color>
+    <color name="colorPrimaryVariant">#4285F4</color>
+    <color name="colorOnPrimary">#FFF</color>
+
+    <!-- Used for switches, OK / CANCEL buttons on dialogs -->
+    <color name="colorSecondary">@color/colorPrimary</color>
+    <color name="colorSecondaryVariant">#FFC107</color> <!-- This one is never used-->
+    <color name="colorOnSecondary">#FFF</color>
+
+    <color name="colorBackground">#FAFAFA</color>
+    <color name="colorOnBackground">#212121</color>
+
+    <color name="colorOutline">#33212121</color>
+
+    <color name="colorSurface">#FFF</color>
+
+    <!-- Used for the snackbars colors -->
+    <color name="colorOnSurface">#212121</color>
+
+    <!-- Used for cards, bottomsheet -->
+    <color name="colorElevatedComponent">#FFF</color>
+
+    <!-- Statusbar + toolbar background color -->
+    <color name="colorToolbar">@color/colorBackground</color>
+    <color name="colorStatusBarLollipop">@color/colorPrimary</color>
+
+    <color name="divider">#33424242</color>
+    <color name="dividerOnSurface">#AAFFFFFF</color>
+
+    <color name="colorOnError">#ff6347</color>
+
+    <!-- Bluetooth State colors -->
+    <color name="bluetoothStateTextcolor">#DDFFFFFF</color>
+    <color name="bluetoothDisabled">@color/colorPauseFab</color>
+    <color name="bluetoothTurningOff">#FF9800</color>
+    <color name="bluetoothTurningOn">@color/colorOnSecondary</color> <!-- #55E319 -->
+
+    <color name="colorPauseFab">#EF5350</color>
+
+    <color name="rateStarColor">#FFC107</color>
+
+    <!-- Beacon types colors -->
+    <color name="colorIBeacon">#27ae60</color> <!-- 20A4F3 -->
+    <color name="colorAltBeacon">#27ae60</color>
+    <color name="colorRuuviTag">#27ae60</color> <!-- 078080 -->
+    <color name="colorEddystoneUid">#27ae60</color> <!-- 9656a1 -->
+    <color name="colorEddystoneUrl">#27ae60</color>
+</resources>

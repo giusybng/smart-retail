@@ -1,0 +1,107 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/colorStatusBarLollipop"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/beacon_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:textColor="@android:color/white"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toStartOf="@+id/beacon_distance"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Beacon Type" />
+
+            <TextView
+                android:id="@+id/beacon_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:textColor="@android:color/white"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toStartOf="@+id/distance_unit"
+                app:layout_constraintTop_toTopOf="@+id/beacon_type"
+                tools:text="12.56" />
+
+            <TextView
+                android:id="@+id/distance_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="4dp"
+                android:text="@string/metters_abbreviation"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/white"
+                android:textSize="26sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/beacon_distance"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_editor_absoluteX="306dp" />
+
+            <TextView
+                android:id="@+id/beacon_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:textAppearance="?attr/textAppearanceSubtitle1"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/beacon_type"
+                tools:text="BluetoothName" />
+
+
+            <TextView
+                android:id="@+id/beacon_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="20dp"
+                android:paddingBottom="8dp"
+                android:textAppearance="?attr/textAppearanceSubtitle1"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/beacon_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="A5:09:FD:B7:C3:22" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

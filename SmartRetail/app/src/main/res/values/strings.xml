@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Smart Retail</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="empty_state_content">Looks like there is nothing here just yet!</string>
+    <string name="feature_scan_content">Tap to start and stop scanning for nearby beacons!</string>
+    <string name="metters_abbreviation">m</string>
+    <string name="bluetooth_state">Bluetooth state</string>
+    <string name="bluetooth_not_supported">Bluetooth not supported</string>
+    <string name="enable_bluetooth_to_start_scanning">Enable bluetooth to start scanning</string>
+    <string name="found_beacon">Found new Beacon: </string>
+
+    <string name="function_limited">Functionality limited</string>
+    <string name="permission_needed">Permission needed</string>
+    <string name="since_background_location">Since background location access has not been granted, this app will not be able to discover beacons when in the background.</string>
+    <string name="since_location">Since location access has not been granted, this app will not be able to discover beacons.</string>
+</resources>

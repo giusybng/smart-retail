@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<color name="colorPrimary">#1B50A6</color>
+
+	<color name="colorPauseFab">#BD423F</color>
+
+	<color name="colorBackground">#46464A</color>
+	<color name="colorOnBackground">#FFF</color>
+	
+	<color name="colorSurface">#46464A</color>
+	<!-- Used for the snackbars colors -->
+	<color name="colorOnSurface">#FFF</color>
+	
+	<!-- Used for cards, bottomsheet -->
+	<color name="colorElevatedComponent">#373740</color>
+	
+	<color name="colorOnError">#EF5350</color>
+	<color name="divider">#33F5F5F5</color>
+</resources>
