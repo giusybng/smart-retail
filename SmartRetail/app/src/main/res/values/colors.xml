@@ -9,8 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="colorPrimary">#4285F4</color>
-    <color name="colorPrimaryVariant">#4285F4</color>
+    <color name="colorPrimary">#FF3700B3</color>
+    <color name="colorPrimaryVariant">#FF3700B3</color>
     <color name="colorOnPrimary">#FFF</color>
 
     <!-- Used for switches, OK / CANCEL buttons on dialogs -->
