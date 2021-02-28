@@ -3,10 +3,9 @@ package com.bongiovanni.smartretail;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -61,7 +60,7 @@ public class BeaconResultsActivity extends AppCompatActivity {
 
     /** Retrieving products from the server **/
     private void showResults(JSONArray results) {
-        
+
         if(results.length() <= 0) return;
 
         LinearLayout dynamicContent = findViewById(R.id.dynamic_product);
