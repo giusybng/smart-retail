@@ -1,7 +1,9 @@
 package com.bongiovanni.smartretail;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import android.Manifest;
@@ -32,6 +34,7 @@ import androidx.core.content.ContextCompat;
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
 
 import android.os.RemoteException;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -49,6 +52,8 @@ import org.altbeacon.beacon.Region;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class MainActivity extends AppCompatActivity implements BeaconConsumer {
@@ -74,6 +79,10 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
         if(bluetoothState == null) {
             Toast.makeText(this, getString(R.string.bluetooth_not_supported), Toast.LENGTH_LONG).show();
             finish();
+        }
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
         isPermissionGranted();
@@ -167,6 +176,11 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
             return true;
         }
 
+        if (id == android.R.id.home) {
+            finish();
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -250,6 +264,19 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
                     startActivity(beaconResultsIntent);
                 }
             });
+
+            SharedPreferences sharedPref = getSharedPreferences("MyData", MODE_PRIVATE);
+            Set<String> myset = new HashSet<String>(){{
+                add("a");
+                add("b");
+                add("c");
+            }};
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putStringSet("name",myset);
+            editor.commit();
+
+
+
             ((TextView)newBeaconView.findViewById(R.id.beacon_address)).setText(beacon.getBeaconAddress());
             ((TextView)newBeaconView.findViewById(R.id.beacon_type)).setText(beacon.getBeaconType());
             ((TextView)newBeaconView.findViewById(R.id.beacon_name)).setText(beacon.getBeaconName());
@@ -339,5 +366,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
         }
         return;
     }
+
+
 
 }

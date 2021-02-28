@@ -14,4 +14,9 @@
     <string name="permission_needed">Permission needed</string>
     <string name="since_background_location">Since background location access has not been granted, this app will not be able to discover beacons when in the background.</string>
     <string name="since_location">Since location access has not been granted, this app will not be able to discover beacons.</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="add_button_text">Add</string>
+    <string name="main_button_text">Done</string>
+    <string name="item_editText_hint">Write a new item</string>
 </resources>

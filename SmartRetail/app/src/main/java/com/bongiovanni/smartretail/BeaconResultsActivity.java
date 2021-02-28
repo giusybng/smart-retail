@@ -3,7 +3,10 @@ package com.bongiovanni.smartretail;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,11 +21,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import cz.msebera.android.httpclient.Header;
 
 public class BeaconResultsActivity extends AppCompatActivity {
 
     private static String url = "http://192.168.1.3:4000/";
+    public static final Set<String> DEFAULT = new HashSet<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +71,14 @@ public class BeaconResultsActivity extends AppCompatActivity {
             try {
                 JSONObject product = results.getJSONObject(i);
                 View newProductView = getLayoutInflater().inflate(R.layout.item_product, dynamicContent, false);
+
+                SharedPreferences sharedPreferences = getSharedPreferences("MyData", MODE_PRIVATE);
+                Set name = sharedPreferences.getStringSet("name", DEFAULT);
+                for (Object temp : name) {
+                    ((TextView)newProductView.findViewById(R.id.product_name)).setText(temp.toString());
+                }
+
+
                 ((TextView)newProductView.findViewById(R.id.product_name)).setText(product.getString("Name"));
                 ((TextView)newProductView.findViewById(R.id.product_category)).setText(product.getString("Category"));
 
@@ -73,6 +88,7 @@ public class BeaconResultsActivity extends AppCompatActivity {
             }
         }
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
