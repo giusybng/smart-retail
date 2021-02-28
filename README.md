@@ -14,13 +14,16 @@ Inside the server folder:
 
 NOTE: BeaconId in [Products.json](https://github.com/giusybng/smart-retail/blob/main/server/Products.json) is the integer hash of the beacon and not UUID because I noticed that the two beacons used had the same UUID but different 'major' and 'minor'.
 
-## Setup server
+**Setup server**
 Inside the server folder: 
 
 ```> npm install```
 
 ```> npm start```
 
-## Setup SmartRetail *(Android application)*
+**Setup SmartRetail *(Android application)***
 - Change the server URL inside the file [BeaconResultsActivity.java](https://github.com/giusybng/smart-retail/blob/main/SmartRetail/app/src/main/java/com/bongiovanni/smartretail/BeaconResultsActivity.java)
 - Build and run app
+
+### Android version
+*API 16: Android 4.1 (Jelly Bean)*
