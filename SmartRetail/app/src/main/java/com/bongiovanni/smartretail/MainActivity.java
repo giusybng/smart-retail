@@ -2,10 +2,8 @@ package com.bongiovanni.smartretail;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
 import android.Manifest;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -21,10 +19,8 @@ import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-
 import com.bongiovanni.smartretail.models.MyBeacon;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.Toolbar;
@@ -32,7 +28,6 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
-
 import android.os.RemoteException;
 import android.view.View;
 import android.view.Menu;
@@ -40,28 +35,25 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import org.altbeacon.beacon.Beacon;
 import org.altbeacon.beacon.BeaconConsumer;
 import org.altbeacon.beacon.BeaconManager;
 import org.altbeacon.beacon.BeaconParser;
 import org.altbeacon.beacon.RangeNotifier;
 import org.altbeacon.beacon.Region;
-
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 
 
 public class MainActivity extends AppCompatActivity implements BeaconConsumer {
+
     private BluetoothAdapter bluetoothState = BluetoothAdapter.getDefaultAdapter();
     private BroadcastReceiver observeBluetoothState;
-
     private static final int PERMISSION_REQUEST_FINE_LOCATION = 1;
     private static final int PERMISSION_REQUEST_BACKGROUND_LOCATION = 2;
     private BeaconManager beaconManager;
     private boolean showBeacon = true;
-
     private HashMap<Integer, MyBeacon> beaconSaved = new HashMap<>();
 
 
@@ -116,7 +108,6 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         final MenuItem bluetoothButton = menu.findItem(R.id.action_bluetooth);
         setBluetoothIcon(bluetoothButton, bluetoothState.isEnabled());
@@ -148,7 +139,6 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
     }
 
 
-    /** Set Bluetooth icon **/
     private void setBluetoothIcon(MenuItem item, boolean status){
         Drawable icon = AppCompatResources.getDrawable(MainActivity.this, status ? R.drawable.ic_round_bluetooth_24px : R.drawable.ic_round_bluetooth_disabled_24px).mutate();
         item.setIcon(icon);
@@ -156,11 +146,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        //noinspection SimplifiableIfStatement
 
         if (id == R.id.action_bluetooth) {
             if (!bluetoothState.isEnabled()) {
@@ -172,6 +158,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
         }
 
         if (id == android.R.id.home) {
+            //Clear Shared Preferences if we return to ShoppingListActivity
             SharedPreferences sharedPreferences = getSharedPreferences("sharedList", MODE_PRIVATE);
             sharedPreferences.edit().remove("shoppingList").commit();
             finish();
@@ -351,7 +338,4 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
         }
         return;
     }
-
-
-
 }

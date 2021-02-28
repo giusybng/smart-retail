@@ -2,32 +2,26 @@ package com.bongiovanni.smartretail;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.HashSet;
 import java.util.Set;
-
 import cz.msebera.android.httpclient.Header;
 
 public class BeaconResultsActivity extends AppCompatActivity {
 
-    private static String url = "http://192.168.1.3:4000/";
+    private static String url = "http://192.168.1.3:4000/"; //my ipv4 address
     public static final Set<String> DEFAULT = new HashSet<String>();
 
     @Override
@@ -60,7 +54,6 @@ public class BeaconResultsActivity extends AppCompatActivity {
 
     /** Retrieving products from the server **/
     private void showResults(JSONArray results) {
-
         if(results.length() <= 0) return;
 
         LinearLayout dynamicContent = findViewById(R.id.dynamic_product);
@@ -71,9 +64,11 @@ public class BeaconResultsActivity extends AppCompatActivity {
                 JSONObject product = results.getJSONObject(i);
                 View newProductView = getLayoutInflater().inflate(R.layout.item_product, dynamicContent, false);
 
+                //Compare the products associated with the beacon with those on the shopping list
                 SharedPreferences sharedPreferences = getSharedPreferences("sharedList", MODE_PRIVATE);
                 Set shoppingList = sharedPreferences.getStringSet("shoppingList", DEFAULT);
                 for (Object temp : shoppingList) {
+                    //Only products associated with the beacon that are on the shopping list will be displayed
                     if((product.getString("Name")).equals(temp.toString())){
                         ((TextView)newProductView.findViewById(R.id.product_name)).setText(product.getString("Name"));
                         ((TextView)newProductView.findViewById(R.id.product_category)).setText(product.getString("Category"));

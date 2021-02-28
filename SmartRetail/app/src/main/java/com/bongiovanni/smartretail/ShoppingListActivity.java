@@ -1,7 +1,6 @@
 package com.bongiovanni.smartretail;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -59,6 +57,4 @@ public class ShoppingListActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }
