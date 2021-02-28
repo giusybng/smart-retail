@@ -1,7 +1,6 @@
 package com.bongiovanni.smartretail.models;
 
 import org.altbeacon.beacon.Beacon;
-
 import java.util.Date;
 
 public class MyBeacon {
