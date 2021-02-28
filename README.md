@@ -25,5 +25,6 @@ Inside the server folder:
 - Change the server URL inside the file [BeaconResultsActivity.java](https://github.com/giusybng/smart-retail/blob/main/SmartRetail/app/src/main/java/com/bongiovanni/smartretail/BeaconResultsActivity.java)
 - Build and run app
 
-### Android version
+## Android version
+
 *API 16: Android 4.1 (Jelly Bean)*
