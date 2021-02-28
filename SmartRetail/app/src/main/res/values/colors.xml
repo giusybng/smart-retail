@@ -18,7 +18,7 @@
     <color name="colorSecondaryVariant">#FFC107</color> <!-- This one is never used-->
     <color name="colorOnSecondary">#FFF</color>
 
-    <color name="colorBackground">#FAFAFA</color>
+    <color name="colorBackground">#ffffff</color>
     <color name="colorOnBackground">#212121</color>
 
     <color name="colorOutline">#33212121</color>
