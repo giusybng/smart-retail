@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="colorPrimary">#FF3700B3</color>
+    <color name="colorPrimary">#ac00e6</color>
     <color name="colorPrimaryVariant">#FF3700B3</color>
     <color name="colorOnPrimary">#FFF</color>
 
@@ -33,7 +33,7 @@
 
     <!-- Statusbar + toolbar background color -->
     <color name="colorToolbar">@color/colorBackground</color>
-    <color name="colorStatusBarLollipop">@color/colorPrimary</color>
+    <color name="colorStatusBarLollipop">#272f42</color>
 
     <color name="divider">#33424242</color>
     <color name="dividerOnSurface">#AAFFFFFF</color>
