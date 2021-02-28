@@ -73,16 +73,16 @@ public class BeaconResultsActivity extends AppCompatActivity {
                 View newProductView = getLayoutInflater().inflate(R.layout.item_product, dynamicContent, false);
 
                 SharedPreferences sharedPreferences = getSharedPreferences("sharedList", MODE_PRIVATE);
-                Set name = sharedPreferences.getStringSet("shoppingList", DEFAULT);
-                for (Object temp : name) {
-                    ((TextView)newProductView.findViewById(R.id.product_name)).setText(temp.toString());
+                Set shoppingList = sharedPreferences.getStringSet("shoppingList", DEFAULT);
+                for (Object temp : shoppingList) {
+                    //((TextView)newProductView.findViewById(R.id.product_name)).setText(temp.toString());
+                    if((product.getString("Name")).equals(temp.toString())){
+                        ((TextView)newProductView.findViewById(R.id.product_name)).setText(product.getString("Name"));
+                        ((TextView)newProductView.findViewById(R.id.product_category)).setText(product.getString("Category"));
+                        dynamicContent.addView(newProductView);
+                    }
                 }
 
-
-                //((TextView)newProductView.findViewById(R.id.product_name)).setText(product.getString("Name"));
-                ((TextView)newProductView.findViewById(R.id.product_category)).setText(product.getString("Category"));
-
-                dynamicContent.addView(newProductView);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
