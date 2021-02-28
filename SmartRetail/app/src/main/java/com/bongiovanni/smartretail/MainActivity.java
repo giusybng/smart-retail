@@ -177,6 +177,8 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
         }
 
         if (id == android.R.id.home) {
+            SharedPreferences sharedPreferences = getSharedPreferences("sharedList", MODE_PRIVATE);
+            sharedPreferences.edit().remove("shoppingList").commit();
             finish();
             return true;
         }
@@ -264,18 +266,6 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
                     startActivity(beaconResultsIntent);
                 }
             });
-
-            SharedPreferences sharedPref = getSharedPreferences("MyData", MODE_PRIVATE);
-            Set<String> myset = new HashSet<String>(){{
-                add("a");
-                add("b");
-                add("c");
-            }};
-            SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putStringSet("name",myset);
-            editor.commit();
-
-
 
             ((TextView)newBeaconView.findViewById(R.id.beacon_address)).setText(beacon.getBeaconAddress());
             ((TextView)newBeaconView.findViewById(R.id.beacon_type)).setText(beacon.getBeaconType());
