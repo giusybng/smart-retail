@@ -61,7 +61,7 @@ public class BeaconResultsActivity extends AppCompatActivity {
 
     /** Retrieving products from the server **/
     private void showResults(JSONArray results) {
-        Toast.makeText(BeaconResultsActivity.this, results.length() + " results", Toast.LENGTH_LONG).show();
+        
         if(results.length() <= 0) return;
 
         LinearLayout dynamicContent = findViewById(R.id.dynamic_product);
@@ -75,7 +75,6 @@ public class BeaconResultsActivity extends AppCompatActivity {
                 SharedPreferences sharedPreferences = getSharedPreferences("sharedList", MODE_PRIVATE);
                 Set shoppingList = sharedPreferences.getStringSet("shoppingList", DEFAULT);
                 for (Object temp : shoppingList) {
-                    //((TextView)newProductView.findViewById(R.id.product_name)).setText(temp.toString());
                     if((product.getString("Name")).equals(temp.toString())){
                         ((TextView)newProductView.findViewById(R.id.product_name)).setText(product.getString("Name"));
                         ((TextView)newProductView.findViewById(R.id.product_category)).setText(product.getString("Category"));
