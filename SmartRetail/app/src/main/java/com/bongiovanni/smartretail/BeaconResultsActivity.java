@@ -21,7 +21,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class BeaconResultsActivity extends AppCompatActivity {
 
-    private static String url = "http://192.168.1.3:4000/"; //my ipv4 address
+    private static String url = "http://172.20.10.4:4000/"; //my ipv4 address
     public static final Set<String> DEFAULT = new HashSet<String>();
 
     @Override

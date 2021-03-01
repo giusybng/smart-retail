@@ -248,10 +248,12 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
                     startActivity(beaconResultsIntent);
                 }
             });
+            String type = "Surgelati";
+            if(beacon.getHashCode().equals("443575690")){
+                type = "Macelleria";
+            }
 
-            ((TextView)newBeaconView.findViewById(R.id.beacon_address)).setText(beacon.getBeaconAddress());
-            ((TextView)newBeaconView.findViewById(R.id.beacon_type)).setText(beacon.getBeaconType());
-            ((TextView)newBeaconView.findViewById(R.id.beacon_name)).setText(beacon.getBeaconName());
+            ((TextView)newBeaconView.findViewById(R.id.beacon_type)).setText(type);
             ((TextView)newBeaconView.findViewById(R.id.beacon_distance)).setText(beacon.getDistance());
             dynamicContent.addView(newBeaconView);
         }
