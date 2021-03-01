@@ -32,7 +32,10 @@ public class BeaconResultsActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle(getIntent().getStringExtra("BeaconName"));
+            actionBar.setTitle("Surgelati");
+            if(getIntent().getStringExtra("BeaconHash").equals("443575690")){
+                actionBar.setTitle("Macelleria");
+            }
         }
 
         final View progressBar2 = findViewById(R.id.progressBar2);
